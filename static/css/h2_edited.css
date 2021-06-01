@@ -1,0 +1,113 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: 'Poppins', sans-serif;
+}
+
+header {
+	background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url('img1.jpg');
+	height: 100vh;
+	width: 100%;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	z-index: 1;
+	background-position: top center;
+	position: relative;
+}
+
+label.logo{
+	width: 100%;
+	color: red;
+	font-size: 45px;
+	padding: 0 100px;
+	font-weight: bold;
+	display: inline-block;
+	position: fixed;
+
+}
+label.logo a{
+	
+	color: black;
+	font-size: 45px;
+	font-weight: 600;
+}
+label.logo a span{
+	color: red;
+}
+.welcome-text {
+	position: fixed;
+	width: 800px;
+	height: 300px;
+	margin: 20% 30%;
+	text-align: center;
+}
+.welcome-text h1 {
+	text-align: center;
+	color: #fff;
+	position: fixed;
+	text-transform: uppercase;
+	font-size: 60px;
+}
+.welcome-text h1 span {
+	color: #00fecb;
+	
+	
+}
+.welcome-text a {
+	border: 2px solid #fff;
+	padding: 10px 30px;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 14px;
+	margin-top: 100px;
+	display: inline-block;
+	color: #fff;
+	left: 780px;
+	position:fixed;
+}
+.welcome-text a:hover {
+	background: #fff;
+	color: #333;
+}
+
+
+@media (max-width:600px) {
+	
+	.wrapper {
+		width: 100%;
+	}
+	.logo {
+		float: none;
+		width: 50%;
+		text-align: center;
+		margin: auto;
+	}
+	
+	
+	.welcome-text {
+		
+		width: 100%;
+		height: auto;
+		margin: 30% 40%;
+		
+	}
+	.welcome-text h1 {
+		
+		
+		font-size: 30px;
+	}
+	.welcome-text a {
+		width: 100%;
+		height: auto;
+		margin: 30% 0;
+	}
+}
+@media (min-width:1000px) {
+	.welcome.text h1{
+		text-align: center;
+	}
+
+}
+
