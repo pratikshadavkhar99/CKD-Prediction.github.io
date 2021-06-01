@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+ 
+}
+
+.row h1{
+	text-align: center;
+}
+
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+html {
+  font-family: "Lucida Sans", sans-serif;
+}
+.btn1{
+	width: 150px;
+	height: 45px;
+	font-size: 20px;
+	background-color:  #c297fc;
+	color: #fff;
+	border: none;
+	box-shadow: 4px 4px #db98fd;
+	border-radius: 15px;
+	cursor: pointer;
+	outline: none;
+	
+	animation: anim-shadow .3s forwards;
+}
+.btn1:hover {background-color: #e65c99;}
+
+.btn1:active{
+	background-color: #e65c99;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+
+}
+
+.btn2{
+	width: 200px;
+	height: 45px;
+	font-size: 20px;
+	background-color: #c297fc;
+	color: #fff;
+	border: none;
+	outline: none;
+	box-shadow: 4px 4px #db98fd;
+	border-radius: 15px;
+	cursor: pointer;
+	animation: anim-shadow .3s forwards;
+}
+.btn2:hover {background-color: #e65c99;}
+
+.btn2:active{
+	background-color: #e65c99;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+
+}
+
+
+.header {
+  background-color: #9933cc;
+  color: #ffffff;
+  padding: 15px;
+  text-align: center;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  padding: 8px;
+  margin-bottom: 7px;
+  background-color: #33b5e5;
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.menu li:hover {
+  background-color: #0099cc;
+}
+
+.aside {
+  
+  background-color: #33b5e5;
+  padding: 15px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.footer {
+  background-color: #0099cc;
+  color: #ffffff;
+  text-align: center;
+  font-size: 12px;
+  padding: 15px;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>CKD Diagnosis</h1>
+</div>
+
+<div class="row">
+  <div class="col-3 col-s-3 menu">
+	<h1> Symptoms </h1> 
+     <ul>
+      <li>Nausea</li>
+			<li>Vomiting</li>
+			<li>Loss of appetite</li>
+			<li>Fatigue and weakness</li>
+			<li>Itching</li>
+			<li>Muscle cramps</li>
+			<li>Not feeling hungry</li>
+			<li>Swelling in your feet and ankles</li>
+			<li>Not enough urine</li>
+			<li>Breathing problem</li>
+    </ul>
+	
+
+<h1> Treatment </h1> 
+<ul>
+			<li>Control your blood sugar</li>
+			<li>Keep a healthy blood pressure</li>
+			<li>Follow a low-salt, low-fat diet</li>
+			<li>Exercise at least 30 minutes</li>
+			<li>Keep healthy and balanced diet</li>
+			<li>Avoid alcohol and smoking</li>
+			<li>Talk to your doctor</li>
+</ul>
+</div>
+
+  <div class="col-6 col-s-9">
+<br>
+<br>
+        <h1>Prediction of CKD</h1>
+<br>
+
+<form action="{{url_for('predict')}}" method="post">
+<table id="test1">
+
+<tr>
+	<td><label for="age">Age :</label>  </td>
+	<td><input type="text" class="age" name="age" required>  </td>
+</tr>
+
+<tr>
+	<td><label for="al">Albumin :</label>  </td>
+	<td><input type="text" class="al" name="albumin" required></td>
+</tr>
+<tr>
+	<td> <label for="bgr">Blood glucose :</label> </td>
+	<td><input type="text" class="bgr" name="bloodglucose" required>  </td>
+</tr>
+<tr>
+	<td><label for="sc">Serum creatinine :</label>  </td>
+	<td> <input type="text" class="sc" name="serumcreat" required> </td>
+
+</tr>
+<tr>
+	<td><label for="hb">Hemoglobin :</label>  </td>
+	<td><input type="text" class="hb" name="hemoglobin" required>  </td>
+
+</tr>
+	
+</table>
+<br>
+<input type="submit" class="btn1" value="PREDICTION">
+</form>
+<br>
+<h1>{{ prediction_text}}</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>GFR CALCULATION</h1>
+<br>
+<table>
+<tr>
+<form action="{{url_for('calc')}}" method="post">
+
+<td> <label for="age">Age :</label></td>
+<td><input type="text" class="age" name="age" required> </td>
+ </tr>
+<tr> 
+
+  <td><label for="gen">Gender :</label> </td>
+
+  <td>
+   <input type="radio" class="rc" id="male" name="gender" value="1" required >
+   <label for="male">Male</label>
+  </td>
+  
+  <td>
+   <input type="radio" class="rc" id="female" name="gender" value="0">
+    <label for="female">Female</label>
+  </td>
+
+</tr>
+<tr>
+
+  <td> <label for="rc">Race :</label>  </td>
+  <td>
+   <input type="radio" class="rc" id="nonblack" name="race" value="0" required >
+    <label for="nonblack">Non-Black</label>
+  </td>
+   <td>
+   <input type="radio" class="rc" id="black" name="race" value="1">
+    <label for="black">Black</label>
+   </td>
+ </tr>
+<tr>
+
+<td> <label for="sc">Serum creatinine : </label></td>
+<td><input type="text" class="sc" name="serum" required> </td>
+ </tr>
+	
+</table>
+<br>
+<input type="submit" class="btn2" value="GFR CALCULATION">
+<br>
+  </form>
+  <h1>{{ pred }}</h1>
+</div>
+
+  <div class="col-3 col-s-12">
+    <div class="aside">
+      <h2>What is CKD?</h2>
+      <p>CKD means Chronic Kidney Disease which affect our kidney function.</p>
+      <h2>Can kidney disease be cured?</h2>
+      <p>Yes, when you take treatment as soon as possible from doctors.</p>
+      <h2>What is GFR?</h2>
+      <p>GFR is Glomerular Filteration Rate which depend on our kidney function.Its is also used for our other body function.</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>Made with ❤️ by MediCO.</p>
+  <p>&copy; Copyright 2021 MediCO</p>
+</div>
+
+</body>
+</html>
+
